@@ -5,7 +5,7 @@ nav_order: 3
 ---
 
 
-Mean classification acc. (\%) evaluation of different methods on the MNIST, FMNIST, and CIFAR10 dataset.
+Mean classification acc. (%) evaluation of different methods on the MNIST, FMNIST, and CIFAR10 dataset.
 
 <table>
    <tr>
