@@ -106,4 +106,4 @@ Mean classification acc. (%) comparison to data augmentation. GeFL outperforms o
 
 
 Comparison of privacy, communication and computational costs in GeFL and GeFL-F. Lower values indicate better conditions for each component.
-<img src="./resources/privacy_scalability.png" alt="drawing" width="600"/>
+<img src="./resources/privacy_scalability.png" alt="drawing" width="800"/>
