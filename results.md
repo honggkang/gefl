@@ -18,55 +18,55 @@ Mean classification acc. (%) evaluation of different methods on the MNIST, FMNIS
        <td>FedAvg</td>
        <td>92.62</td>
        <td>80.58</td>
-       <td>45.11</td>
+       <td>55.65</td>
    </tr>
    <tr>
        <td>FedProx</td>
        <td>92.57</td>
        <td>80.50</td>
-       <td>43.33</td>
+       <td>55.10</td>
    </tr>
    <tr>
        <td>AvgKD</td>
        <td>92.81</td>
        <td>77.12</td>
-       <td>23.57</td>
+       <td>26.36</td>
    </tr>
    <tr>
        <td>FedDF</td>
        <td>91.39</td>
        <td>58.81</td>
-       <td>48.77</td>
+       <td>57.17</td>
    </tr>
    <tr>
        <td>LG-FedAvg</td>
        <td>92.71</td>
        <td>80.61</td>
-       <td>--</td>
+       <td>54.49</td>
    </tr>
    <tr>
        <td><b>GeFL</b> (FedDCGAN)</td>
        <td>95.32</td>
        <td><b>83.11</b></td>
-       <td>50.43</td>
+       <td>58.45</td>
    </tr>
    <tr>
        <td><b>GeFL</b> (FedCVAE)</td>
        <td>94.46</td>
        <td>82.33</td>
-       <td>45.81</td>
+       <td>55.80</td>
    </tr>
    <tr>
        <td><b>GeFL</b> (FedDDPM<sub>w=0</sub>)</td>
        <td><b>96.44</b></td>
        <td>82.43</td>
-       <td>48.84</td>
+       <td>59.36</td>
    </tr>
    <tr>
        <td><b>GeFL</b> (FedDDPM<sub>w=2</sub>)</td>
        <td>95.17</td>
        <td>81.51</td>
-       <td><b>50.91</b></td>
+       <td><b>58.47</b></td>
    </tr>
 </table>
 
@@ -79,30 +79,36 @@ Mean classification acc. (%) comparison to data augmentation. GeFL outperforms o
    </tr>
    <tr>
        <td>None</td>
-       <td>45.11<sub>&plusmn;0.46</sub></td>
-       <td>50.43<sub>&plusmn;1.01</sub></td>
+       <td>55.65<sub>&plusmn;0.68</sub></td>
+       <td>58.45<sub>&plusmn;0.49</sub></td>
    </tr>
    <tr>
        <td>MixUp</td>
-       <td>47.99<sub>&plusmn;3.15</sub></td>
-       <td><b>52.95<sub>&plusmn;0.78</sub></b></td>
+       <td>60.07<sub>&plusmn;1.13</sub></td>
+       <td><b>62.67<sub>&plusmn;0.24</sub></b></td>
    </tr>
    <tr>
        <td>CutMix</td>
-       <td>46.61<sub>&plusmn;1.29</sub></td>
-       <td>51.21<sub>&plusmn;1.09</sub></td>
+       <td>58.95<sub>&plusmn;0.61</sub></td>
+       <td>61.66<sub>&plusmn;0.41</sub></td>
    </tr>
    <tr>
        <td>AugMix</td>
-       <td>45.18<sub>&plusmn;0.92</sub></td>
-       <td>51.76<sub>&plusmn;0.92</sub></td>
+       <td>53.96<sub>&plusmn;0.37</sub></td>
+       <td>56.47<sub>&plusmn;0.25</sub></td>
    </tr>
    <tr>
        <td>AutoAugment</td>
-       <td>47.89<sub>&plusmn;0.21</sub></td>
-       <td>51.77<sub>&plusmn;2.03</sub></td>
+       <td>56.99<sub>&plusmn;0.43</sub></td>
+       <td>59.97<sub>&plusmn;0.38</sub></td>
    </tr>
 </table>
+
+Scalability in client numbers of GeFL and GeFL-F on MNIST and FMNIST dataset. GeFL-F exhibits less performance degradation in a large number of clients compared to GeFL
+<img src="./resources/scalability_gefl_mnist.png" alt="drawing" width="200"/>
+<img src="./resources/scalability_gefl_f_mnist.png" alt="drawing" width="200"/>
+<img src="./resources/scalability_gefl_fmnist.png" alt="drawing" width="200"/>
+<img src="./resources/scalability_gefl_f_fmnist.png" alt="drawing" width="200"/>
 
 
 Comparison of privacy, communication and computational costs in GeFL and GeFL-F. Lower values indicate better conditions for each component.

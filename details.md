@@ -879,12 +879,12 @@ Note: DA techniques are used only during target network training (not in trainin
   - Homogeneity level (HL) 0 denotes the heterogeneous models without common feature extractor (FE) that only headers of models need to be trained.
   - HL 6 denotes the homogeneous models where all the models consists of only common FE (i.e., common FE is the whole model).
 
-  ## Figure 8
+## Figure 8
 
   - Models are described as in details on Figure 7.
   - MND was evaluated as in Table 2.
 
-  ## Figure 10
+## Figure 10
 
   - Real data scale : 0.01, 0.05, 0.1, 0.5, 1
   - GeFL w/ Syn 5: Local epochs for training training target network by synthetic samples <i>T<sub>s</sub></i>=5
