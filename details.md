@@ -187,6 +187,10 @@ nav_order: 4
         </tr>
     </tbody>
 </table>
+- FedProx: 1e-2 multiplied to proximal term
+- AvgKD: pseudo labels are aggregated from the outputs of 10 heterogeneous models. 
+- FedDF: CIFAR100 as public dataset
+- LG-FedAvg: the first conv layer was employed as averaging over all the heterogeneous models while the other layers are averaged across submodels. 
 
 ### MNIST/FMNIST
 <table>
@@ -367,6 +371,10 @@ nav_order: 4
         </tr>
     </tbody>
 </table>
+- FedProx: 1e-2 multiplied to proximal term
+- AvgKD: Pseudo labels are aggregated from the outputs of 10 heterogeneous models.
+- FedDF: SVHN as public dataset for MNIST & CIFAR10 as public dataset for FMNIST
+- LG-FedAvg: the first conv layer was employed as averaging over all the heterogeneous models while the other layers are averaged across submodels. 
 
 ## Table II
 
@@ -889,9 +897,79 @@ Note: DA techniques are used only during target network training (not in trainin
   - Real data scale : 0.01, 0.05, 0.1, 0.5, 1
   - GeFL w/ Syn 5: Local epochs for training training target network by synthetic samples <i>T<sub>s</sub></i>=5
   - GeFL w/ Syn 1: Local epochs for training training target network by synthetic samples <i>T<sub>s</sub></i>=1
-  - Total 10 results for each dataset 
   - Other parameters are identical to Table 1 
 
 ## Table 8
 
 - Same as Table 7 
+
+## Model architecture
+### MNIST
+| **CNN-1**            | **CNN-2**            | **CNN-3**            | **CNN-4**            | **CNN-5**            | **CNN-6**            | **CNN-7**            | **CNN-8**            | **CNN-9**            | **CNN-10**           |
+|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|
+| conv(3, 3×3, 1)      | conv(3, 3×3, 1)      | conv(3, 3×3, 1)      | conv(3, 3×3, 1)      | conv(3, 3×3, 1)      | conv(3, 3×3, 1)      | conv(3, 3×3, 1)      | conv(3, 3×3, 1)      | conv(3, 3×3, 1)      | conv(3, 3×3, 1)      |
+| bn(3)                | bn(3)                | bn(3)                | bn(3)                | bn(3)                | bn(3)                | bn(3)                | bn(3)                | bn(3)                | bn(3)                |
+| relu                 | relu                 | relu                 | relu                 | relu                 | relu                 | relu                 | relu                 | relu                 | relu                 |
+| maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   |
+| conv(16, 3×3, 1)     | conv(16, 3×3, 1)     | conv(20, 3×3, 1)     | conv(10, 3×3, 1)     | conv(16, 3×3, 1)     | conv(20, 3×3, 1)     | conv(10, 3×3, 1)     | conv(16, 3×3, 1)     | conv(20, 3×3, 1)     | conv(10, 3×3, 1)     |
+| relu                 | relu                 | relu                 | relu                 | relu                 | relu                 | relu                 | relu                 | relu                 | relu                 |
+| maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   |
+|                      | conv(32, 3×3, 1)     | conv(40, 3×3, 1)     | conv(20, 3×3, 1)     | conv(32, 3×3, 1)     | conv(40, 3×3, 1)     | conv(20, 3×3, 1)     | conv(32, 3×3, 1)     | conv(40, 3×3, 1)     | conv(20, 3×3, 1)     |
+|                      | relu                 | relu                 | relu                 | relu                 | relu                 | relu                 | relu                 | relu                 | relu                 |
+|                      | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   |
+|                      |                      |                      |                      | conv(64, 3×3, 1)     | conv(80, 3×3, 1)     | conv(40, 3×3, 1)     | conv(64, 3×3, 1)     | conv(80, 3×3, 1)     | conv(40, 3×3, 1)     |
+|                      |                      |                      |                      | relu                 | relu                 | relu                 | relu                 | relu                 | relu                 |
+|                      |                      |                      |                      | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   |
+|                      |                      |                      |                      |                      |                      |                      | conv(128, 3×3, 1)    | conv(100, 3×3, 1)    | conv(80, 3×3, 1)     |
+|                      |                      |                      |                      |                      |                      |                      | relu                 | relu                 | relu                 |
+|                      |                      |                      |                      |                      |                      |                      | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   | maxpool(2×2, 2, 0)   |
+| fc(1024/10)          | fc(512/10)           | fc(640/10)           | fc(320/10)           | fc(256/10)           | fc(320/10)           | fc(160/10)           | fc(128/10)           | fc(100/10)           | fc(80/10)            |
+
+### FMNIST
+| **CNN-1**        | **CNN-2**        | **CNN-3**        | **CNN-4**        | **CNN-5**        | **CNN-6**        | **CNN-7**        | **CNN-8**        | **CNN-9**        | **CNN-10**       |
+|------------------|------------------|------------------|------------------|------------------|------------------|------------------|------------------|------------------|------------------|
+| conv(3,3×3,1)     | conv(3,3×3,1)     | conv(3,3×3,1)     | conv(3,3×3,1)     | conv(3,3×3,1)     | conv(3,3×3,1)     | conv(3,3×3,1)     | conv(3,3×3,1)     | conv(3,3×3,1)     | conv(3,3×3,1)     |
+| bn(3)            | bn(3)            | bn(3)            | bn(3)            | bn(3)            | bn(3)            | bn(3)            | bn(3)            | bn(3)            | bn(3)            |
+| relu             | relu             | relu             | relu             | relu             | relu             | relu             | relu             | relu             | relu             |
+| maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) |
+| conv(16,3×3,1)   | conv(16,3×3,1)   | conv(20,3×3,1)   | conv(10,3×3,1)   | conv(16,3×3,1)   | conv(20,3×3,1)   | conv(10,3×3,1)   | conv(16,3×3,1)   | conv(20,3×3,1)   | conv(10,3×3,1)   |
+| bn(16)           | bn(16)           | bn(20)           | bn(10)           | bn(16)           | bn(20)           | bn(10)           | bn(16)           | bn(20)           | bn(10)           |
+| relu             | relu             | relu             | relu             | relu             | relu             | relu             | relu             | relu             | relu             |
+| maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) |
+|                  | conv(32,3×3,1)   | conv(40,3×3,1)   | conv(20,3×3,1)   | conv(32,3×3,1)   | conv(40,3×3,1)   | conv(20,3×3,1)   | conv(32,3×3,1)   | conv(40,3×3,1)   | conv(20,3×3,1)   |
+|                  | bn(32)           | bn(40)           | bn(20)           | bn(32)           | bn(40)           | bn(20)           | bn(32)           | bn(40)           | bn(20)           |
+|                  | relu             | relu             | relu             | relu             | relu             | relu             | relu             | relu             | relu             |
+|                  | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) |
+|                  |                  |                  |                  | conv(64,3×3,1)   | conv(80,3×3,1)   | conv(40,3×3,1)   | conv(64,3×3,1)   | conv(80,3×3,1)   | conv(40,3×3,1)   |
+|                  |                  |                  |                  | bn(64)           | bn(80)           | bn(40)           | bn(64)           | bn(80)           | bn(40)           |
+|                  |                  |                  |                  | relu             | relu             | relu             | relu             | relu             | relu             |
+|                  |                  |                  |                  | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) |
+|                  |                  |                  |                  |                  |                  |                  | conv(128,3×3,1)  | conv(100,3×3,1)  | conv(80,3×3,1)   |
+|                  |                  |                  |                  |                  |                  |                  | bn(128)          | bn(100)          | bn(80)           |
+|                  |                  |                  |                  |                  |                  |                  | relu             | relu             | relu             |
+|                  |                  |                  |                  |                  |                  |                  | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) |
+| fc(1024/10)      | fc(512/10)       | fc(640/10)       | fc(320/10)       | fc(256/10)       | fc(320/10)       | fc(160/10)       | fc(128/10)       | fc(100/10)       | fc(80/10)        |
+
+### CIFAR10
+| **CNN-1**  | **CNN-2**  | **CNN-3**  | **CNN-4**  | **CNN-5**  | **CNN-6**  | **CNN-7**  | **CNN-8**  | **CNN-9**  | **CNN-10** |
+|------------|------------|------------|------------|------------|------------|------------|------------|------------|-------------|
+| conv(3,3×3,1) | conv(3,3×3,1) | conv(3,3×3,1) | conv(3,3×3,1) | conv(3,3×3,1) | conv(3,3×3,1) | conv(3,3×3,1) | conv(3,3×3,1) | conv(3,3×3,1) | conv(3,3×3,1) |
+| bn(3)      | bn(3)      | bn(3)      | bn(3)      | bn(3)      | bn(3)      | bn(3)      | bn(3)      | bn(3)      | bn(3)       |
+| relu       | relu       | relu       | relu       | relu       | relu       | relu       | relu       | relu       | relu        |
+| conv(10,3×3,1) | conv(10,3×3,1) | conv(10,3×3,1) | conv(10,3×3,1) | conv(10,3×3,1) | conv(10,3×3,1) | conv(10,3×3,1) | conv(10,3×3,1) | conv(10,3×3,1) | conv(10,3×3,1) |
+| bn(10)     | bn(10)     | bn(10)     | bn(10)     | bn(10)     | bn(10)     | bn(10)     | bn(10)     | bn(10)     | bn(10)      |
+| relu       | relu       | relu       | relu       | relu       | relu       | relu       | relu       | relu       | relu        |
+| maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) |
+| conv(16,3×3,1) | conv(16,3×3,1) | conv(20,3×3,1) | conv(10,3×3,1) | conv(10,3×3,1) | conv(20,3×3,1) | conv(10,3×3,1) | conv(16,3×3,1) | conv(20,3×3,1) | conv(10,3×3,1) |
+| relu       | relu       | relu       | relu       | relu       | relu       | relu       | relu       | relu       | relu        |
+| maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) |
+|            | conv(32×3,1) | conv(40,3×3,1) | conv(20,3×3,1) | conv(32,3×3,1) | conv(40,3×3,1) | conv(20,3×3,1) | conv(32,3×3,1) | conv(40,3×3,1) | conv(20,3×3,1) |
+|            | relu       | relu       | relu       | relu       | relu       | relu       | relu       | relu       | relu        |
+|            | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) |
+|            |            |            |            | conv(64,3×3,1) | conv(80,3×3,1) | conv(40,3×3,1) | conv(64,3×3,1) | conv(80,3×3,1) | conv(40,3×3,1) |
+|            |            |            |            | relu       | relu       | relu       | relu       | relu       | relu        |
+|            |            |            |            | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) |
+|            |            |            |            |            |            |            | conv(128,3×3,1) | conv(100,3×3,1) | conv(80,3×3,1) |
+|            |            |            |            |            |            |            | relu       | relu       | relu        |
+|            |            |            |            |            |            |            | maxpool(2×2,2,0) | maxpool(2×2,2,0) | maxpool(2×2,2,0) |
+| fc(1024/10) | fc(512/10) | fc(640/10) | fc(320/10) | fc(256/10) | fc(320/10) | fc(160/10) | fc(128/10) | fc(100/10) | fc(80/10)   |
