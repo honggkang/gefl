@@ -904,7 +904,7 @@ Note: DA techniques are used only during target network training (not in trainin
 - Same as Table 7 
 
 ## Model architecture
-In following tables, conv(c,k,p) denotes a 2d convolutional layer, where c is the output channel size, k is the kernel size, and p is the padding size. bn(c) represents a batch normalization layer with c denoting the channel size. The term relu denotes the rectified linear layer, and maxpool(k,s,p) denotes a max-pooling layer. where k is the kernel size, s is the stride, and p is the padding size. Finally, fc(in/out) indicates a fully connected layer, where $in$ is the number of input nodes and $out$ is the number of output nodes.
+In following tables, conv(c,k,p) denotes a 2d convolutional layer, where c is the output channel size, k is the kernel size, and p is the padding size. bn(c) represents a batch normalization layer with c denoting the channel size. The term relu denotes the rectified linear layer, and maxpool(k,s,p) denotes a max-pooling layer. where k is the kernel size, s is the stride, and p is the padding size. Finally, fc(in/out) indicates a fully connected layer, where in is the number of input nodes and out is the number of output nodes.
 
 ### MNIST
 <table>
