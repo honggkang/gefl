@@ -105,12 +105,13 @@ Mean classification acc. (%) comparison to data augmentation. GeFL outperforms o
 </table>
 
 
-Scalability in client numbers of GeFL and GeFL-F on MNIST and FMNIST dataset. GeFL-F exhibits less performance degradation in a large number of clients compared to GeFL
+Scalability in client numbers of GeFL and GeFL-F on MNIST and FMNIST dataset. GeFL-F exhibits less performance degradation in a large number of clients compared to GeFL.
+MNIST (top), FMNIST (bottom)
 
-<img src="./resources/scalability_gefl_mnist.png" alt="drawing" width="200"/>
-<img src="./resources/scalability_gefl_f_mnist.png" alt="drawing" width="200"/>
-<img src="./resources/scalability_gefl_fmnist.png" alt="drawing" width="200"/>
-<img src="./resources/scalability_gefl_f_fmnist.png" alt="drawing" width="200"/>
+<img src="./resources/scalability_gefl_mnist.png" alt="drawing" width="350"/>
+<img src="./resources/scalability_gefl_f_mnist.png" alt="drawing" width="350"/>
+<img src="./resources/scalability_gefl_fmnist.png" alt="drawing" width="350"/>
+<img src="./resources/scalability_gefl_f_fmnist.png" alt="drawing" width="350"/>
 
 
 Comparison of privacy, communication and computational costs in GeFL and GeFL-F. Lower values indicate better conditions for each component.
