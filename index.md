@@ -7,7 +7,7 @@ nav_order: 1
 # GeFL: Model-Agnostic Federated Learning with Generative Models
 
 
-### [Honggu Kang] &nbsp;&nbsp; [Seohyeon Cha] &nbsp;&nbsp; [Jiwan Seo] &nbsp;&nbsp; [Joonhyuk Kang] <br>
+### [Honggu Kang] &nbsp;&nbsp; [Seohyeon Cha] &nbsp;&nbsp; [Joonhyuk Kang] <br>
 ### [KAIST (Korea Advanced Institute of Science and Technology)] <br>
 ### [[Paper]] &nbsp;&nbsp; [[Code]]
 
