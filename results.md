@@ -105,14 +105,32 @@ Mean classification acc. (%) comparison to data augmentation. GeFL outperforms o
 </table>
 
 
-Scalability in client numbers of GeFL and GeFL-F on MNIST and FMNIST dataset. GeFL-F exhibits less performance degradation in a large number of clients compared to GeFL.
-MNIST (top), FMNIST (bottom)
 
-<img src="./resources/scalability_gefl_mnist.png" alt="drawing" width="350"/>
-<img src="./resources/scalability_gefl_f_mnist.png" alt="drawing" width="350"/>
-<img src="./resources/scalability_gefl_fmnist.png" alt="drawing" width="350"/>
-<img src="./resources/scalability_gefl_f_fmnist.png" alt="drawing" width="350"/>
+Scalability in client numbers of GeFL and GeFL-F on MNIST, FMNIST, SVHN, and CIFAR dataset. GeFL-F exhibits less performance degradation in a large number of clients compared to GeFL.
 
+<figure>
+    <img src='./resources/geflf_mnist.png' alt="drawing" width="400"/>
+    <figcaption>MNIST</figcaption>
+    <img src='./resources/geflf_fmnist.png' alt="drawing" width="400"/>
+    <figcaption>FMNIST</figcaption>
+</figure>
+
+<figure>
+    <img src='./resources/geflf_svhn.png' alt="drawing" width="400"/>
+    <figcaption>SVHN</figcaption>
+    <img src='./resources/geflf_cifar.png' alt="drawing" width="400"/>
+    <figcaption>CIFAR10</figcaption>
+</figure>
+
+<!-- ![MNIST](./resources/geflf_mnist.png)*MNIST*
+![FMNIST](./resources/geflf_fmnist.png)*FMNIST*
+
+![SVHN](./resources/geflf_svhn.png)*SVHN*
+![CIFAR10](./resources/geflf_cifar.png)*CIFAR10* -->
+
+<!-- <img src="./resources/geflf_fmnist.png" alt="drawing" width="400"/>
+<img src="./resources/geflf_svhn.png" alt="drawing" width="400"/>
+<img src="./resources/geflf_cifar.png" alt="drawing" width="400"/> -->
 
 Comparison of privacy, communication and computational costs in GeFL and GeFL-F. Lower values indicate better conditions for each component.
 

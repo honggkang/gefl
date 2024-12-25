@@ -7,7 +7,7 @@ nav_order: 4
 
 # Experimental Details on GeFL
 
-## Table I
+## Table II
 ### CIFAR10
 <table>
     <caption>FL parameters</caption>
@@ -136,57 +136,38 @@ nav_order: 4
     <thead>
         <tr>
             <th></th>
-            <th>DCGAN</th>
-            <th>CVAE</th>
-            <th>DDPM w=0</th>
-            <th>DDPM w=2</th>
+            <th>Target networks</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>Optimizer</td>
             <td>SGD</td>
-            <td>SGD</td>
-            <td>SGD</td>
-            <td>SGD</td>
         </tr>
         <tr>
             <td>Learning rate <i>α</i></td>
-            <td>0.1</td>
-            <td>0.1</td>
-            <td>0.1</td>
             <td>0.1</td>
         </tr>
         <tr>
             <td>Communication rounds for training target network<i>T<sub>TN</sub></i></td>
             <td>100</td>
-            <td>100</td>
-            <td>100</td>
-            <td>100</td>
         </tr>
         <tr>
             <td>Local epochs for training training target network by real samples <i>T<sub>r</sub></i></td>
-            <td>5</td>
-            <td>5</td>
-            <td>5</td>
             <td>5</td>
         </tr>
         <tr>
             <td>Local epochs for training training target network by synthetic samples <i>T<sub>s</sub></i></td>
             <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
         </tr>
         <tr>
             <td>Batch size <i>B</i></td>
             <td>128</td>
-            <td>128</td>
-            <td>128</td>
-            <td>128</td>
         </tr>
     </tbody>
 </table>
+Baselines
+
 - FedProx: 1e-2 multiplied to proximal term
 - AvgKD: pseudo labels are aggregated from the outputs of 10 heterogeneous models. 
 - FedDF: CIFAR100 as public dataset
@@ -320,63 +301,44 @@ nav_order: 4
     <thead>
         <tr>
             <th></th>
-            <th>DCGAN</th>
-            <th>CVAE</th>
-            <th>DDPM w=0</th>
-            <th>DDPM w=2</th>
+            <th>Target networks</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>Optimizer</td>
             <td>SGD</td>
-            <td>SGD</td>
-            <td>SGD</td>
-            <td>SGD</td>
         </tr>
         <tr>
             <td>Learning rate <i>α</i></td>
-            <td>0.1</td>
-            <td>0.1</td>
-            <td>0.1</td>
             <td>0.1</td>
         </tr>
         <tr>
             <td>Communication rounds for training target network<i>T<sub>TN</sub></i></td>
             <td>100</td>
-            <td>100</td>
-            <td>100</td>
-            <td>100</td>
         </tr>
         <tr>
             <td>Local epochs for training training target network by real samples <i>T<sub>r</sub></i></td>
-            <td>5</td>
-            <td>5</td>
-            <td>5</td>
             <td>5</td>
         </tr>
         <tr>
             <td>Local epochs for training target network by synthetic samples <i>T<sub>s</sub></i></td>
             <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
         </tr>
         <tr>
             <td>Batch size <i>B</i></td>
             <td>64</td>
-            <td>64</td>
-            <td>64</td>
-            <td>64</td>
         </tr>
     </tbody>
 </table>
+Baselines
+
 - FedProx: 1e-2 multiplied to proximal term
 - AvgKD: Pseudo labels are aggregated from the outputs of 10 heterogeneous models.
 - FedDF: SVHN as public dataset for MNIST & CIFAR10 as public dataset for FMNIST
 - LG-FedAvg: the first conv layer was employed as averaging over all the heterogeneous models while the other layers are averaged across submodels. 
 
-## Table II
+## Table III
 
 <table>
       <thead>
@@ -420,14 +382,14 @@ nav_order: 4
     </tbody>
 </table>
 
-## Table III
+## Table IV
 - Generative model: DCGAN
 - All the parameters settings are identical to Table 1
 
 Note: DA techniques are used only during target network training (not in training generative models) 
 
 
-## Figure 5
+## Figure 4
 ### CIFAR10
 <table>
     <caption>FL parameters</caption>
@@ -450,7 +412,7 @@ Note: DA techniques are used only during target network training (not in trainin
 <br>
 
 <table>
-    <caption>Generative mdoel (GM) parameters</caption>
+    <caption>Feature-generative mdoel (GM) parameters</caption>
     <thead>
         <tr>
             <th></th>
@@ -556,73 +518,46 @@ Note: DA techniques are used only during target network training (not in trainin
     <thead>
         <tr>
             <th></th>
-            <th>DCGAN</th>
-            <th>CVAE</th>
-            <th>DDPM w=0</th>
-            <th>DDPM w=2</th>
+            <th>Target networks</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>Optimizer</td>
             <td>SGD</td>
-            <td>SGD</td>
-            <td>SGD</td>
-            <td>SGD</td>
         </tr>
         <tr>
             <td>Learning rate <i>α</i></td>
-            <td>0.1</td>
-            <td>0.1</td>
-            <td>0.1</td>
             <td>0.1</td>
         </tr>
         <tr>
             <td>Communication rounds for warming up feature extractor<i>T<sub>FE</sub></i></td>
             <td>50</td>
-            <td>50</td>
-            <td>50</td>
-            <td>50</td>
         </tr>
         <tr>
             <td>Local epochs for training feature extractor <i>T<sub>w</sub></i></td>
-            <td>5</td>
-            <td>5</td>
-            <td>5</td>
             <td>5</td>
         </tr>
         <tr>
             <td>Communication rounds for training target network<i>T<sub>TN</sub></i></td>
             <td>100</td>
-            <td>100</td>
-            <td>100</td>
-            <td>100</td>
         </tr>
         <tr>
             <td>Local epochs for training target network by real samples <i>T<sub>r</sub></i></td>
-            <td>5</td>
-            <td>5</td>
-            <td>5</td>
             <td>5</td>
         </tr>
         <tr>
             <td>Local epochs for training target network by synthetic samples <i>T<sub>s</sub></i></td>
             <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
         </tr>
         <tr>
             <td>Batch size <i>B</i></td>
-            <td>128</td>
-            <td>128</td>
-            <td>128</td>
             <td>128</td>
         </tr>
     </tbody>
 </table>
 
-### MNIST/FMNIST
+### MNIST/FMNIST/SVHN
 <table>
     <caption>FL parameters</caption>
     <tbody>
@@ -644,7 +579,7 @@ Note: DA techniques are used only during target network training (not in trainin
 <br>
 
 <table>
-    <caption>Generative mdoel (GM) parameters</caption>
+    <caption>Feature-generative mdoel (GM) parameters</caption>
     <thead>
         <tr>
             <th></th>
@@ -746,71 +681,90 @@ Note: DA techniques are used only during target network training (not in trainin
 <br>
 
 <table>
-    <caption>Target network (CNN) parameters</caption>
+    <caption>Target network (CNN) parameters (MNIST/FMNIST)</caption>
     <thead>
         <tr>
             <th></th>
-            <th>DCGAN</th>
-            <th>CVAE</th>
-            <th>DDPM w=0</th>
-            <th>DDPM w=2</th>
+            <th>Target networks</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>Optimizer</td>
             <td>SGD</td>
-            <td>SGD</td>
-            <td>SGD</td>
-            <td>SGD</td>
         </tr>
         <tr>
             <td>Learning rate <i>α</i></td>
-            <td>0.1</td>
-            <td>0.1</td>
-            <td>0.1</td>
             <td>0.1</td>
         </tr>
         <tr>
             <td>Communication rounds for warming up feature extractor<i>T<sub>FE</sub></i></td>
             <td>20</td>
-            <td>20</td>
-            <td>20</td>
-            <td>20</td>
         </tr>
         <tr>
             <td>Local epochs for training feature extractor <i>T<sub>w</sub></i></td>
-            <td>5</td>
-            <td>5</td>
-            <td>5</td>
             <td>5</td>
         </tr>
         <tr>
             <td>Communication rounds for training target network<i>T<sub>TN</sub></i></td>
             <td>50</td>
-            <td>50</td>
-            <td>50</td>
-            <td>50</td>
         </tr>
         <tr>
             <td>Local epochs for training target network by real samples <i>T<sub>r</sub></i></td>
-            <td>5</td>
-            <td>5</td>
-            <td>5</td>
             <td>5</td>
         </tr>
         <tr>
             <td>Local epochs for training target network by synthetic samples <i>T<sub>s</sub></i></td>
             <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
         </tr>
         <tr>
             <td>Batch size <i>B</i></td>
             <td>64</td>
-            <td>64</td>
-            <td>64</td>
+        </tr>
+    </tbody>
+</table>
+
+### SVHN
+
+<table>
+    <caption>Target network (CNN) parameters (SVHN)</caption>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Target networks</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Optimizer</td>
+            <td>SGD</td>
+        </tr>
+        <tr>
+            <td>Learning rate <i>α</i></td>
+            <td>0.1</td>
+        </tr>
+        <tr>
+            <td>Communication rounds for warming up feature extractor<i>T<sub>FE</sub></i></td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Local epochs for training feature extractor <i>T<sub>w</sub></i></td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Communication rounds for training target network<i>T<sub>TN</sub></i></td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>Local epochs for training target network by real samples <i>T<sub>r</sub></i></td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Local epochs for training target network by synthetic samples <i>T<sub>s</sub></i></td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Batch size <i>B</i></td>
             <td>64</td>
         </tr>
     </tbody>
