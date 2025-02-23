@@ -1,35 +1,34 @@
 ---
 title: Home
 layout: home
+nav_order: 1
 ---
 
-This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
+# GeFL: Model-Agnostic Federated Learning with Generative Models
 
-If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages.
 
-More specifically, the created site:
+### [Honggu Kang] &nbsp;&nbsp; [Seohyeon Cha] &nbsp;&nbsp; [Joonhyuk Kang] <br>
+### [KAIST (Korea Advanced Institute of Science and Technology)] <br>
+### [[Paper]] &nbsp;&nbsp; [[Code]]
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
+<br>
 
-Other than that, you're free to customize sites that you create with this template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
+### TL;DR
+Federated learning of heterogeneous model architectures aided by generative models
 
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
+<img src="./resources/framework-gefl.png" alt="drawing" width="360"/>
+<img src="./resources/framework-gefl-f.png" alt="drawing" width="700"/>
 
-To get started with creating a site, simply:
+### Abstract
 
-1. click "[use this template]" to create a GitHub repository
-2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
+Federated learning (FL) is a promising paradigm in distributed learning while preserving the privacy of users.
+However, the increasing size of recent models makes it unaffordable for a few users to encompass the model. It leads the users to adopt heterogeneous models based on their diverse computing capabilities and network bandwidth. Correspondingly, FL with heterogeneous models should be addressed, given that FL typically involves training a single global model. In this paper, we propose Generative Model-Aided Federated Learning (GeFL), incorporating a generative model that aggregates global knowledge across users of heterogeneous models. Our experiments on various classification tasks demonstrate notable performance improvements of GeFL compared to baselines, as well as limitations in terms of privacy and scalability. To tackle these concerns, we introduce a novel framework, GeFL-F. It trains target networks aided by feature-generative models. We empirically demonstrate the consistent performance gains of GeFL-F, while demonstrating better privacy preservation and robustness to a large number of clients.
 
-If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo) in the template README.
 
 ----
-
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
-
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
-[Jekyll]: https://jekyllrb.com
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
+[Honggu Kang]: https://honggkang.github.io/about/
+[Seohyeon Cha]: https://seohyeon-cha.github.io/
+[Joonhyuk Kang]: https://artlab.kaist.ac.kr/bbs/board.php?bo_table=sub1_1
+[KAIST (Korea Advanced Institute of Science and Technology)]: https://kaist.ac.kr/
+[Paper]: https://arxiv.org/abs/2412.18460
+[Code]: https://github.com/honggkang/hetero-model-fl-gen
