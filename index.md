@@ -9,7 +9,7 @@ nav_order: 1
 
 ### [Honggu Kang] &nbsp;&nbsp; [Seohyeon Cha] &nbsp;&nbsp; [Joonhyuk Kang] <br>
 ### [KAIST (Korea Advanced Institute of Science and Technology)] <br>
-### [[Paper]] &nbsp;&nbsp; [[Code]]
+### [[Paper]] &nbsp;&nbsp; [[Code]] &nbsp;&nbsp; [[Media]]
 
 <br>
 
@@ -32,3 +32,4 @@ However, the increasing size of recent models makes it unaffordable for a few us
 [KAIST (Korea Advanced Institute of Science and Technology)]: https://kaist.ac.kr/
 [Paper]: https://arxiv.org/abs/2412.18460
 [Code]: https://github.com/honggkang/hetero-model-fl-gen
+[Media]: https://www.mittrchina.com/news/detail/14619
