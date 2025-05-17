@@ -1041,9 +1041,9 @@ In following tables, conv(c,k,p) denotes a 2d convolutional layer, where c is th
       <td></td>
       <td></td>
       <td></td>
-      <td>conv(64,3×3,1)</td>
+      <td>conv(128,3×3,1)</td>
+      <td>conv(100,3×3,1)</td>
       <td>conv(80,3×3,1)</td>
-      <td>conv(40,3×3,1)</td>
     </tr>
     <tr>
       <td></td>
@@ -1069,6 +1069,18 @@ In following tables, conv(c,k,p) denotes a 2d convolutional layer, where c is th
       <td>maxpool(2×2,2,0)</td>
       <td>maxpool(2×2,2,0)</td>
     </tr>
+    <tr>
+      <td>fc(1024/10)</td>
+      <td>fc(512/10)</td>
+      <td>fc(640/10)</td>
+      <td>fc(320/10)</td>
+      <td>fc(256/10)</td>
+      <td>fc(320/10)</td>
+      <td>fc(160/10)</td>
+      <td>fc(128/10)</td>
+      <td>fc(100/10)</td>
+      <td>fc(80/10)</td>
+    </tr>    
   </tbody>
 </table>
 
