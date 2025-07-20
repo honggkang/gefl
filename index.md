@@ -11,6 +11,9 @@ nav_order: 1
 ### [KAIST (Korea Advanced Institute of Science and Technology)] <br>
 ### [[Paper]] &nbsp;&nbsp; [[Code]] &nbsp;&nbsp; [[Media]]
 
+
+### Accepted at IEEE Transactions on Mobile Computing (TMC)
+
 <br>
 
 ### TL;DR
